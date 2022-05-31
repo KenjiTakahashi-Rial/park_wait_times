@@ -12,7 +12,10 @@ import sys
 from typing import Optional
 
 from google_utils.bigquery import insert
+from logging_utils.log import get_logger
 from queue_time_utils.queue_times import get_park, get_queue_times
+
+LOGGER = get_logger()
 
 
 def main() -> None:
@@ -45,6 +48,7 @@ def main() -> None:
         rows.append(create_row(None, ride))
 
     insert("parks", "wait_times", rows)
+    LOGGER.info("Success")
 
 
 if __name__ == "__main__":
