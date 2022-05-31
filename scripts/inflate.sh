@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DIR="$(cd "$(dirname "$0")" && pwd)"
+cd $DIR/..
+
 PYTHON_VERSION="3.10.4"
 pyenv install --skip-existing $PYTHON_VERSION
 pyenv local $PYTHON_VERSION
