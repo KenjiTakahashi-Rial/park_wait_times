@@ -36,8 +36,8 @@ if [ ! -d $PYENV_VIRTUALENV_DIR ]; then
     git clone https://github.com/pyenv/pyenv-virtualenv.git $PYENV_VIRTUALENV_DIR
 fi
 
-echo 'export PYENV_ROOT="$PYENV_ROOT"' >> ~/.bashrc
-echo 'export PATH="$PYENV_ROOT/bin:$HOME/.local/bin:$PATH"' >> ~/.bashrc
+echo "export PYENV_ROOT=\"$PYENV_ROOT\"" >> ~/.bashrc
+echo "export PATH=\"$PYENV_ROOT/bin:\$HOME/.local/bin:\$PATH"" >> ~/.bashrc
 echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n eval "$(pyenv init --path)"\nfi' >> ~/.bashrc
 exec $SHELL
 
